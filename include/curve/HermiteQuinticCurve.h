@@ -5,7 +5,7 @@
 class HermiteQuinticCurve : public ICurve
 {
 public:
-    HermiteQuinticCurve(Vector p0, Vector v0, Vector a0, Vector p1, Vector v1, Vector a1);
+    HermiteQuinticCurve(const Vector& p0, const Vector& v0, const Vector& a0, const Vector& p1, const Vector& v1, const Vector& a1);
 
     virtual ~HermiteQuinticCurve() = default;
 
@@ -18,7 +18,7 @@ public:
     virtual double get_curvature(double t) const override;
 
 private:
-    void calculate_params(Vector p0, Vector v0, Vector a0, Vector p1, Vector v1, Vector a1);
+    void calculate_params(const Vector& p0, const Vector& v0, const Vector& a0, const Vector& p1, const Vector& v1, const Vector& a1);
 
     double ax, bx, cx, dx, ex, fx;
     double ay, by, cy, dy, ey, fy;

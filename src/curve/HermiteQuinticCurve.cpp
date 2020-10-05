@@ -1,11 +1,11 @@
 #include "curve/HermiteQuinticCurve.h"
 
-HermiteQuinticCurve::HermiteQuinticCurve(Vector p0, Vector v0, Vector a0, Vector p1, Vector v1, Vector a1)
+HermiteQuinticCurve::HermiteQuinticCurve(const Vector& p0, const Vector& v0, const Vector& a0, const Vector& p1, const Vector& v1, const Vector& a1)
 {
     calculate_params(p0, v0, a0, p1, v1, a1);
 }
 
-void HermiteQuinticCurve::calculate_params(Vector p0, Vector v0, Vector a0, Vector p1, Vector v1, Vector a1)
+void HermiteQuinticCurve::calculate_params(const Vector& p0, const Vector& v0, const Vector& a0, const Vector& p1, const Vector& v1, const Vector& a1)
 {
     ax = -6 * p0.x - 3 * v0.x - 0.5 * a0.x + 0.5 * a1.x - 3 * v1.x + 6 * p1.x;
     ay = -6 * p0.y - 3 * v0.y - 0.5 * a0.y + 0.5 * a1.y - 3 * v1.y + 6 * p1.y;
