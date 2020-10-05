@@ -11,7 +11,7 @@ add_executable(libpath ${SOURCE_FILES})
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 
-include_directories(src test)
+include_directories(include test)
 
 message(STATUS "SOURCE_FILES: ${SOURCE_FILES}")
 

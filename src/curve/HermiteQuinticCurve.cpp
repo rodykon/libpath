@@ -1,4 +1,3 @@
-#include <cmath>
 #include "curve/HermiteQuinticCurve.h"
 
 HermiteQuinticCurve::HermiteQuinticCurve(Vector p0, Vector v0, Vector a0, Vector p1, Vector v1, Vector a1)
