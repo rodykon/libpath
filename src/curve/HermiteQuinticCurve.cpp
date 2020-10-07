@@ -36,7 +36,7 @@ Vector HermiteQuinticCurve::get_point(double t) const
 Vector HermiteQuinticCurve::get_velocity(double t) const
 {
     double x = 5 * ax * t*t*t*t + 4 * bx * t*t*t + 3 * cx * t*t + 2 * dx * t + ex;
-    double y = 5 * ay * t*t*t*t + 4 * by * t*t*t + 3 * cy * t*t + 2 * dy * t + ex;
+    double y = 5 * ay * t*t*t*t + 4 * by * t*t*t + 3 * cy * t*t + 2 * dy * t + ey;
     return {x,y};
 }
 
