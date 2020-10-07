@@ -1,5 +1,5 @@
 #pragma once
-#include <cmath>
+#include <math.h>
 #include "curve/ICurve.h"
 
 class HermiteQuinticCurve : public ICurve

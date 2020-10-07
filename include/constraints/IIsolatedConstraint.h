@@ -1,3 +1,4 @@
+#pragma once
 #include "curve/ICurve.h"
 
 
