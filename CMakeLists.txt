@@ -4,7 +4,7 @@ project(libpath VERSION 0.1.0)
 include(CTest)
 enable_testing()
 
-set(SOURCE_FILES src/constraints/RotationalAccelerationConstraint.cpp src/constraints/TranslationalAccelerationConstraint.cpp src/curve/HermiteQuinticCurve.cpp src/curve/HermiteCubicCurve.cpp src/util/CSVWriter.cpp test/TestCurve.cpp test/TestConstraints.cpp src/main.cpp)
+set(SOURCE_FILES src/curve_splitter/ChordLengthCurveSplitter.cpp src/constraints/RotationalAccelerationConstraint.cpp src/constraints/TranslationalAccelerationConstraint.cpp src/curve/HermiteQuinticCurve.cpp src/curve/HermiteCubicCurve.cpp src/util/CSVWriter.cpp test/TestCurve.cpp test/TestConstraints.cpp src/main.cpp)
 
 add_executable(libpath ${SOURCE_FILES})
 
