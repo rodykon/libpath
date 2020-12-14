@@ -4,14 +4,23 @@ project(libpath VERSION 0.1.0)
 include(CTest)
 enable_testing()
 
-set(SOURCE_FILES src/curve_splitter/ChordLengthCurveSplitter.cpp src/constraints/RotationalAccelerationConstraint.cpp src/constraints/TranslationalAccelerationConstraint.cpp src/curve/HermiteQuinticCurve.cpp src/curve/HermiteCubicCurve.cpp src/util/CSVWriter.cpp test/TestCurve.cpp test/TestConstraints.cpp src/main.cpp)
+file(GLOB SOURCES
+    "src/*.cpp"
+    "src/constraints/*.cpp"
+    "src/curve/*.cpp"
+    "src/curve_splitter/*.cpp"
+    "src/math/*.cpp"
+    "src/profile/*.cpp"
+    "src/util/*.cpp"
+    "test/*.cpp"
+)
 
-add_executable(libpath ${SOURCE_FILES})
+include_directories(include test)
+
+add_executable(libpath ${SOURCES})
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-
-include_directories(include test)
 
 message(STATUS "SOURCE_FILES: ${SOURCE_FILES}")
 

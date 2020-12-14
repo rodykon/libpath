@@ -12,26 +12,26 @@ MotionProfileSegment extrapolate(const MotionProfileSegment& from, double time)
     double dt = time - from.time;
     double length = from.length + from.velocity * dt + 0.5 * from.acceleration * dt * dt;
     double velocity = from.velocity + from.acceleration * dt;
-    return { time, length, velocity, from.acceleration }
+    return { time, length, velocity, from.acceleration };
 }
 
 
-MotionProfileSegment MotionProfile::get_segment(double time)
+MotionProfileSegment MotionProfile::get_segment(double time) const
 {
     double curr_time = 0.0;
-    MotionProfileSegment prev_segment = NULL;
+    const MotionProfileSegment* prev_segment = nullptr;
 
     for (const auto& segment : segments)
     {
         curr_time += get_time(segment);
 
         if (curr_time >= time) {
-            if (prev_segment == NULL) {
-                prev_segment = segment;
+            if (prev_segment == nullptr) {
+                prev_segment = &segment;
             }
 
-            return extrapolate(prev_segment, time);
+            return extrapolate(*prev_segment, time);
         }
-
+        prev_segment = &segment;
     }
 }
