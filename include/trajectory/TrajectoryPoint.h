@@ -2,9 +2,9 @@
 
 struct TrajectoryPoint
 {
-    double distance;
     Vector position;
+    double curvature;
+    double heading;
     double velocity;
     double acceleration;
-    double time;
 }
